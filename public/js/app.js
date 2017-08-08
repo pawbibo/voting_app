@@ -1,6 +1,7 @@
 class ProductList extends React.Component {
   render() {
-    const ProductItems = Seed.products.map((product) => (
+    const products = Seed.products.sort((a, b) => (b.votes - a.votes));
+    const ProductItems = products.map((product) => (
         <Product
           key={`product-${product.id}`}
           id={product.id}
